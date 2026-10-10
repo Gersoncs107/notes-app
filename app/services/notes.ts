@@ -8,18 +8,12 @@ const notes = [
   },
 ]
 
-const Notes = () => {
-  return (
-    <div>
-      <h2>Notes</h2>
-      <ul>
-        {notes.map(note => (
-          <li key={note.id}>
-            {note.content} {note.important && <strong>(important)</strong>}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+let nextId = 4
+
+export const getNotes = () => {
+  return notes
 }
-export default Notes
+
+export const addNote = (content: string, important: boolean) => {
+  notes.push({ id: nextId++, content, important })
+}
