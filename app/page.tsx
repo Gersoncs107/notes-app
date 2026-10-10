@@ -1,3 +1,5 @@
+import { getNotes } from "./services/notes"
+
 const Home = () => {
   console.log('hello next.js')
   return (
