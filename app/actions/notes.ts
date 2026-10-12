@@ -1,6 +1,7 @@
 "use server"
 
 import { redirect } from "next/navigation"
+import { revalidatePath } from "next/cache"
 import { addNote } from "../services/notes"
 
 export const createNote = async (formData: FormData) => {
