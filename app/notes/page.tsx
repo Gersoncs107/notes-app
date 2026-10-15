@@ -9,6 +9,7 @@ const Notes = () => {
       <ul>
         {notes.map(note => (
           <li key={note.id}>
+            <Link href={`/notes/${note.id}`}>{note.content}</Link>
             {note.content} {note.important && <strong>(important)</strong>}
           </li>
         ))}
