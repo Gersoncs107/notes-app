@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import { getNoteById } from "@/app/services/notes"
+import { toggleNoteImportance } from "@/app/actions/notes"
 
 export const instant = false
 
