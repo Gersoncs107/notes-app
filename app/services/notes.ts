@@ -1,6 +1,5 @@
 import { eq } from "drizzle-orm"
 import { db } from "../../db"
-import { notes } from "../../db/schema"
 
 const notes = [
   { id: 1, content: "next.js utilizes React Server Components", important: true },
@@ -14,8 +13,8 @@ const notes = [
 
 let nextId = 4
 
-export const getNotes = async () => {
-  return db.query.notes.findMany()
+export const getNotes = () => {
+  return notes
 }
 
 export const getNoteById = (id: number) => {
