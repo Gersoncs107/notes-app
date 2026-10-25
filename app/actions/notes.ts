@@ -7,7 +7,7 @@ import { addNote, toggleImportance } from "../services/notes"
 export const createNote = async (formData: FormData) => {
   const content = formData.get("content") as string
   const important = formData.get("important") === "on"
-  addNote(content, important)
+  await addNote(content, important)
   revalidatePath("/notes")
   redirect("/notes")
 }
