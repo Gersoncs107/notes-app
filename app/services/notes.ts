@@ -20,6 +20,9 @@ export const addNote = async (content: string, important: boolean) => {
 export const toggleImportance = async (id: number) => {
   const note = await getNoteById(id)
   if (note) {
-    return db.update(notes).set({ important: !note.important }).where(eq(notes.id, id))
+    await db
+      .update(notes)
+      .set({ important: !note.important })
+      .where(eq(notes.id, id))
   }
 }
