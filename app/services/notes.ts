@@ -2,7 +2,6 @@ import { eq } from "drizzle-orm"
 import { db } from "../../db"
 import { notes } from "../../db/schema"
 
-let nextId = 4
 
 export const getNotes = async () => {
   return db.query.notes.findMany()
