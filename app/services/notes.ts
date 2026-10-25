@@ -3,7 +3,13 @@ import { db } from "../../db"
 import { notes } from "../../db/schema"
 
 
-export const getNotes = async () => {
+export const getNotes = async (importantOnly: boolean) => {
+  if (importantOnly) {
+    return db.query.notes.findMany({
+      where: eq(notes.important, true),
+    })
+  }
+  
   return db.query.notes.findMany()
 }
 
