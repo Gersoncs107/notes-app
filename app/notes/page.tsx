@@ -34,4 +34,5 @@ const Notes = async ({
     </div>
   )
 }
+
 export default Notes
