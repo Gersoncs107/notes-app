@@ -2,6 +2,7 @@ import { eq } from "drizzle-orm"
 import { db } from "../../db"
 import { notes } from "../../db/schema"
 
+
 export const getNotes = async (importantOnly: boolean) => {
   if (importantOnly) {
     return db.query.notes.findMany({
