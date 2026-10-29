@@ -8,6 +8,13 @@
       "when": 1792880423662,
       "tag": "0000_easy_harry_osborn",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793312095068,
+      "tag": "0001_magenta_maddog",
+      "breakpoints": true
     }
   ]
 }
