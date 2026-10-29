@@ -5,3 +5,4 @@ export const notes = pgTable("notes", {
   content: text("content").notNull(),
   important: boolean("important").notNull().default(false),
 })
+
