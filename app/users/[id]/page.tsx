@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getUserById } from "../../services/users"
+import { getUserById, getNotesByUserId } from "../../services/users"
 
 const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
@@ -10,13 +10,15 @@ const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     notFound()
   }
 
+  const notes = await getNotesByUserId(user.id)
+
   return (
     <div>
       <h2>{user.name}</h2>
       <p>Username: {user.username}</p>
       <h3>Notes</h3>
       <ul>
-        {user.notes.map((note) => (
+        {notes.map((note) => (
           <li key={note.id}>
             <Link href={`/notes/${note.id}`}>{note.content}</Link>
             {note.important && <strong> (important)</strong>}
@@ -26,4 +28,5 @@ const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     </div>
   )
 }
+
 export default UserPage
