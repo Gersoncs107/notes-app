@@ -2,6 +2,8 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getUserById, getNotesByUserId } from "../../services/users"
 
+export const instant = false
+
 const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
   const user = await getUserById(Number(id))
