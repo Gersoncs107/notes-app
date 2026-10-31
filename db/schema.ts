@@ -1,4 +1,5 @@
 import { pgTable, serial, text, boolean, integer } from "drizzle-orm/pg-core"
+import { relations } from "drizzle-orm"
 
 export const notes = pgTable("notes", {
   id: serial("id").primaryKey(),
