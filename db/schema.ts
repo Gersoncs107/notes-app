@@ -14,3 +14,13 @@ export const users = pgTable("users", {
   name: text("name").notNull(),
 })
 
+export const usersRelations = relations(users, ({ many }) => ({
+  notes: many(notes),
+}))
+
+export const notesRelations = relations(notes, ({ one }) => ({
+  user: one(users, {
+    fields: [notes.userId],
+    references: [users.id],
+  }),
+}))
