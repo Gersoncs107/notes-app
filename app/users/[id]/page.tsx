@@ -12,8 +12,6 @@ const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     notFound()
   }
 
-  const notes = await getNotesByUserId(user.id)
-
   return (
     <div>
       <h2>{user.name}</h2>
