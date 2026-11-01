@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getUserById, getNotesByUserId, getUserWithNotes } from "../../services/users"
+import { getUserWithNotes } from "../../services/users"
 
 export const instant = false
 
