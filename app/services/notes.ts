@@ -20,7 +20,11 @@ export const getNoteById = async (id: number) => {
 }
 
 export const addNote = async (content: string, important: boolean) => {
-  return db.insert(notes).values({ content, important })
+  const user = await db.query.users.findFirst({
+    orderBy: sql`RANDOM()`,
+  })
+
+  await db.insert(notes).values({ content, important, userId: user.id })
 }
 
 export const toggleImportance = async (id: number) => {
