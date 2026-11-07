@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation"
 import { revalidatePath } from "next/cache"
 import { addNote, toggleImportance } from "../services/notes"
+import { auth } from "@/auth"
 
 export const createNote = async (formData: FormData) => {
   const session = await auth()
