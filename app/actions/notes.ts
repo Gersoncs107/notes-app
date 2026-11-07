@@ -5,6 +5,11 @@ import { revalidatePath } from "next/cache"
 import { addNote, toggleImportance } from "../services/notes"
 
 export const createNote = async (formData: FormData) => {
+  const session = await auth()
+  if (!session) {
+    redirect("/login")
+  }
+
   const content = formData.get("content") as string
   const important = formData.get("important") === "on"
   await addNote(content, important)
