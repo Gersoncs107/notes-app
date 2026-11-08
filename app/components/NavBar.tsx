@@ -23,6 +23,8 @@ export default function NavBar() {
         </>
       ) : (
         <Link href="/login">login</Link>
+        {" | "}
+          <Link href="/register">register</Link>
       )}
     </nav>
   )
