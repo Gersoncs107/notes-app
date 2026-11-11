@@ -4,6 +4,8 @@ import { useActionState } from "react"
 import { createNote } from "@/app/actions/notes"
 
 const NewNote = () => {
+  const [state, formAction] = useActionState(createNote, { error: "" })
+
   return (
     <div>
       <h2>Create a new note</h2>
