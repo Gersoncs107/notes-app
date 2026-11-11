@@ -9,7 +9,7 @@ const NewNote = () => {
   return (
     <div>
       <h2>Create a new note</h2>
-      <form action={createNote}>
+      <form action={formAction}>
         <div>
           <label>
             Content
