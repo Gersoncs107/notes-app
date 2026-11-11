@@ -1,3 +1,5 @@
+"use client"
+
 import { createNote } from "@/app/actions/notes"
 
 const NewNote = () => {
