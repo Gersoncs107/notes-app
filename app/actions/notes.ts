@@ -25,7 +25,7 @@ export const createNote = async (
   await addNote(content, important)
 
   revalidatePath("/notes")
-  redirect("/notes")
+  return { error: "", success: true }
 }
 
 export const toggleNoteImportance = async (formData: FormData) => {
