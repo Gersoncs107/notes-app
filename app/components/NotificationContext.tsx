@@ -39,5 +39,4 @@ export const NotificationProvider = ({
     </NotificationContext>
   )
 }
-
 export const useNotification = () => useContext(NotificationContext)
